@@ -9,7 +9,8 @@ function handlePopup() {
           if (video.isIntersecting) {
             const images = video.target.getAttribute('data-images').split(',');
             updatePopupImages(popup, images);
-            popup.removeAttribute("hidden")
+            popup.removeAttribute("hidden");
+            popup.classList.add('display-flex');
             popup.setAttribute("data-puzzle", video.target.id)
             document.body.setAttribute("no-scroll", true)
             observer.unobserve(video.target)
@@ -31,6 +32,7 @@ function handlePopup() {
       const img = document.createElement('img');
       img.src = image;
       img.alt = '';
+      img.classList.add('overlay-image');
       popup.appendChild(img);
     });
   }
@@ -43,6 +45,7 @@ function handlePopup() {
         const allImagesHidden = Array.from(popup.querySelectorAll('img')).every(img => img.style.display === 'none');
         if (allImagesHidden) {
           popup.setAttribute("hidden", true);
+          popup.classList.remove('display-flex');
           document.body.removeAttribute("no-scroll");
           const videoId = popup.getAttribute("data-puzzle");
           document.getElementById(videoId).scrollIntoView({
