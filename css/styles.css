@@ -17,9 +17,11 @@ body {
     font-family: Arial, sans-serif;
     font-size: 5vw;
     line-height: 4.5vw;
-    color: #333;
-    background-color: #f2f2f2;
-    padding: 1vw;
+    color: rgb(194, 194, 194);
+    background-color: #343434;
+    padding-top: 1vw;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 video {
@@ -31,7 +33,7 @@ video {
 .popup {
     position:fixed;
     inset: 0;
-    background-color: rgba(128, 128, 128, .75);
+    background-color: rgba(128, 128, 128, 1);
     backdrop-filter: blur(8px);
     width: 100vw;
     height: 100vh;
